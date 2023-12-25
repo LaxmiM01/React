@@ -34,20 +34,20 @@ app.get('/todos', async (req, res) => {
   }
   
 });
-app.post('/todos', async (req, res) => {
-  console.log(req.body)
-  const { text, completed } = req.body;
+// app.post('/todos', async (req, res) => {
+//   console.log(req.body)
+//   const { text, completed } = req.body;
 
-  try{
-    const todo = new Todo({ text, completed });
-    await todo.save();
-    res.json(todo);
+//   try{
+//     const todo = new Todo({ text, completed });
+//     await todo.save();
+//     res.json(todo);
     
-  }catch(error) {
-    console.log(error);
-    res.status(5000).json({ error: 'Internal Server Error'})
-  }
-});
+//   }catch(error) {
+//     console.log(error);
+//     res.status(5000).json({ error: 'Internal Server Error'})
+//   }
+// });
 app.listen(5000, () => {
   console.log("5000 port is running...")
 }
