@@ -1,7 +1,16 @@
 const mongoose = require("mongoose")
-const todoSchema={
-userId:{type:mongoose.Schema.Types.ObjectId,ref:"User",required:true},
-   text:{type:String,require:true},
-   completed:{type:Boolean,default:false}
-}
-const User = mongoose.model("User" , userSchema)
+const Schema = mongoose.Schema;
+
+const todoSchema = new Schema({
+   title: { type: String, required: true },
+   description: String,
+   completed: { type: Boolean, default: false },
+   user: { type: Schema.Types.ObjectId, ref: "User" },
+ });
+ 
+ module.exports = mongoose.model("Todo", todoSchema);
+ // {
+ //   "title":"reading books",
+ //    "description":" 2  dayscomplete the task within"
+ 
+ //  }

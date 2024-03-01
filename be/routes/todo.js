@@ -1,9 +1,19 @@
   const express = require("express")
   const router = express.Router()
-  const {addtodos,gettodos,edittodos,deletetodos} = require("../controllers/todoController")
+  const {
+   createTodo,
+   getTodos,
+   getTodo,
+   updateTodo,
+   deleteTodo,
+  } = require("../controllers/todo.js")
   
-  router.get("/gettodos",gettodos)
-  router.post("/addtodos",addtodos)
-  router.get("/edittodos",edittodos)
-  router.post("/deletetodos",deletetodos)
+  // Define routes for CRUD operations on todos
+router.post("/todos", createTodo);
+router.get("/", getTodos);
+router.get("/:id", getTodo);
+router.put("/:id", updateTodo);
+router.delete("/:id", deleteTodo);
+
+  module.exports = router
 
