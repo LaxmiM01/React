@@ -34,7 +34,7 @@ const onSubmitData = async (event) =>{
         setData('');
         
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     
 }

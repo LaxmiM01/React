@@ -15,6 +15,8 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb+srv://MLaxmi:Nani123@cluster0.kapa9of.mongodb.net/', {useNewUrlParser: true,useUnifiedTopology: true})
   .then(() => {console.log('Working')})
   .catch((err) =>{console.log(err)})
+
+  
   const TodoSchema = { 
     text: String,
     completed:Boolean

@@ -24,9 +24,9 @@ mongoose.connect('mongodb+srv://MLaxmi:Nani123@cluster0.kapa9of.mongodb.net/', {
   }
 
   const Form = mongoose.model("form",FormSchema);
-  app.get('/', async (req, res) => {
-    res.send('Hello World')
-  });
+  // app.get('/', async (req, res) => {
+  //   res.send('Hello World')
+  // });
   app.post('/forms', async (req, res) => {
     console.log(req.body)
     const { name,email,phno,age,gender, completed } = req.body;
